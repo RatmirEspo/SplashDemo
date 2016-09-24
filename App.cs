@@ -8,7 +8,7 @@ using System.Threading;
 namespace SplashDemo
 {
     /// <summary>
-    ///Main
+    ///Main 
     /// </summary>
     class App: Application
     {
