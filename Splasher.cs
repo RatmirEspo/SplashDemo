@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 
 namespace SplashDemo
 {
@@ -14,7 +10,7 @@ namespace SplashDemo
         /// <summary>
         /// 
         /// </summary>
-        private static Window mSplash;
+        private static Window _mSplash;
 
         /// <summary>
         /// Get or set the splash screen window
@@ -23,11 +19,11 @@ namespace SplashDemo
         {
             get
             {
-                return mSplash;
+                return _mSplash;
             }
             set
             {
-                mSplash = value;
+                _mSplash = value;
             }
         }
 
@@ -36,23 +32,14 @@ namespace SplashDemo
         /// </summary>
         public static void ShowSplash ( )
         {
-            if ( mSplash != null )
-            {
-                mSplash.Show ( );
-            }
+            _mSplash?.Show ();
         }
         /// <summary>
         /// Close splash screen
         /// </summary>
         public static void CloseSplash ( )
         {
-            if ( mSplash != null )
-            {
-                mSplash.Close ( );
-
-                if ( mSplash is IDisposable )
-                    ( mSplash as IDisposable ).Dispose ( );
-            }
+            _mSplash?.Close ( );
         }
     }
 }

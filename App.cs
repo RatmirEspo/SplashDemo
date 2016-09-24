@@ -10,21 +10,21 @@ namespace SplashDemo
     /// <summary>
     ///Main 
     /// </summary>
-    class App: Application
+    internal class App: Application
     {
         /// <summary>
         /// 
         /// </summary>
         [STAThread ()]
-        static void Main ()
+        private static void Main ()
         {
             Splasher.Splash = new SplashScreen ();
             Splasher.ShowSplash ();
 
             //Здесь будет проверка модулей при загрузке
-            for ( int i = 0; i < 1000; i++ )
+            for ( var i = 0; i < 1000; i++ )
             {
-                MessageListener.Instance.ReceiveMessage(string.Format("Load module {0}", i));
+                MessageListener.Instance.ReceiveMessage($"Load module {i}");
                 Thread.Sleep (1);
             }
             /////////////////////////////////////////////
